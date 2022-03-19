@@ -2,7 +2,9 @@ package main
 
 import (
 	"ambassador/src/database"
+	"ambassador/src/routes"
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 )
 
 func main() {
@@ -11,9 +13,11 @@ func main() {
 
 	app := fiber.New()
 
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello world")
-	})
+	app.Use(cors.New(cors.Config{
+		AllowCredentials: true,
+	}))
+
+	routes.Setup(app)
 
 	app.Listen(":3000")
 }
