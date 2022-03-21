@@ -28,4 +28,13 @@ Presinstall: `curl -sSfL https://raw.githubusercontent.com/cosmtrek/air/master/i
 
 ## Execute commands into Docker
 
-1. Connect via sh with **backend** container with docker-compose: `docker-compose exec backend sh`
+1. Connect via sh with **backend** container service with docker-compose: `docker-compose exec backend sh`
+2. Execute the command inside sh: `go run src/commands/populateUsers.go`
+
+## Setup endpoint
+
+1. Create a model
+2. Create a controller that connect with the database
+3. Add model to db.go in database config, into **AutoMigrate** func
+4. Add route
+5. Check that works with Postman
