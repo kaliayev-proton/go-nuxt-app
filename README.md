@@ -38,3 +38,7 @@ Presinstall: `curl -sSfL https://raw.githubusercontent.com/cosmtrek/air/master/i
 3. Add model to db.go in database config, into **AutoMigrate** func
 4. Add route
 5. Check that works with Postman
+
+## MailHog
+
+Open Mailhog server to manage the mail sending process: `~/go/bin/MailHog`
